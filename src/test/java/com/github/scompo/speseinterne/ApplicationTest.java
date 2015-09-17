@@ -26,7 +26,7 @@ public class ApplicationTest {
 	@Test
 	public void test() {
 		
-		assertTrue("Application started" , true);
+		assertTrue("Application not started" , true);
 	}
 
 }
