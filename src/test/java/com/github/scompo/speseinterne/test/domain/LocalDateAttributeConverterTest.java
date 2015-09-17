@@ -1,4 +1,4 @@
-package com.github.scompo.speseinterne.domain;
+package com.github.scompo.speseinterne.test.domain;
 
 import static org.junit.Assert.*;
 
@@ -8,6 +8,8 @@ import java.time.LocalDate;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import com.github.scompo.speseinterne.domain.LocalDateAttributConverter;
 
 public class LocalDateAttributeConverterTest {
 
