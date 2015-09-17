@@ -5,7 +5,12 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@SpringApplicationConfiguration(classes = Application.class)
 public class ApplicationTest {
 
 	@Before
@@ -18,7 +23,8 @@ public class ApplicationTest {
 
 	@Test
 	public void test() {
-		fail("Not yet implemented"); // TODO
+		
+		assertTrue("Application started" , true);
 	}
 
 }
