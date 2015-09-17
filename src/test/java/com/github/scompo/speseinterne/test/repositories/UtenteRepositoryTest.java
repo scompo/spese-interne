@@ -1,6 +1,6 @@
 package com.github.scompo.speseinterne.test.repositories;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
@@ -9,6 +9,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.github.scompo.speseinterne.domain.Utente;
 import com.github.scompo.speseinterne.repositories.UtenteRepository;
 import com.github.scompo.speseinterne.test.IntegrationTestConfig;
 
@@ -31,6 +32,15 @@ public class UtenteRepositoryTest {
 	public void testCountEmpty() {
 
 		assertEquals(0L, utenteRepository.count());
+	}
+
+	@Test
+	public void testSave() {
+
+		Utente res = utenteRepository.save(new Utente("testusername"));
+
+		assertNotNull(res);
+		assertTrue(utenteRepository.count() == 1);
 	}
 
 }
