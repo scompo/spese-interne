@@ -1,10 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="main-layout">
 <head>
-<meta charset="ISO-8859-1" />
-<title>index</title>
+<title>Main</title>
 </head>
 <body>
-	<h1>Hello!</h1>
+	<header>
+		<h1>Spese interne</h1>
+	</header>
+	<section layout:fragment="content">
+		<div class="row">
+			<div class="col-md-offset-1 col-md-10 col-md-offset-1">
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Utente</th>
+							<th>Totale</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr th:each="dettaglioUtente : ${dettagliUtenti}">
+							<td th:text="${dettaglioUtente.utente.username}">username</td>
+							<td>100.00</td>
+						</tr>
+					</tbody>
+
+				</table>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-1 col-md-10 col-md-offset-1">
+				<form class="form-inline" action="#" th:action="@{/saveUser}" th:object="${utente}" method="post">
+					<div class="form-group">
+						<label for="username">Username</label> 
+						<input type="text" th:field="*{username}"
+							class="form-control" id="username"
+							placeholder="username" name = "username"/>
+					</div>
+					<button type="submit" class="btn btn-default">Inserisci</button>
+				</form>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
