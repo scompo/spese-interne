@@ -33,11 +33,11 @@ public class MainController {
 	}
 
 	@RequestMapping(value = "/saveUser", method = RequestMethod.POST)
-	public String saveUser(Utente utente, Model model) {
+	public String saveUser(Utente utente) {
 
 		System.err.println(utente);
 		utenteRepository.save(utente);
 
-		return index(model);
+		return "redirect:/";
 	}
 }
