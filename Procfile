@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT -jar target/spese-interne-0.0.1-SNAPSHOT.jar --spring.profiles.active=production
+web: java -Dserver.port=$PORT -jar target/spese-interne-0.0.1-SNAPSHOT.jar
