@@ -30,7 +30,8 @@ public class RiassuntoDettagliUtenteServiceImpl implements RiassuntoDettagliUten
 
 		for (Utente utente : utenteRepository.findAll()) {
 
-			res.add(new DettagliUtente(utente, spesaRepository.sommaSpeseByUtente(utente.getUsername())));
+			res.add(new DettagliUtente(utente, spesaRepository.sommaSpeseByUtente(utente.getUsername()),
+					spesaRepository.findMaxDataSpesaByUsername(utente.getUsername())));
 		}
 
 		return res;

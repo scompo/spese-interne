@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="main-layout">
+<head>
+<title>Main</title>
+</head>
+<body>
+	<header>
+		<h1>Inserimento spese</h1>
+	</header>
+	<section layout:fragment="navbar">
+		<ul class="nav nav-tabs">
+			<li role="presentation"><a href="/">Index</a></li>
+			<li role="presentation" class="active"><a href="/utenti">Inserisci
+					utente</a></li>
+		</ul>
+	</section>
+	<section layout:fragment="content">
+		<div class="row">
+			<div class="col-md-offset-1 col-md-10 col-md-offset-1">
+				<form class="form-inline" action="#" th:action="@{/salvaUtente}"
+					th:object="${utente}" method="post">
+					<div class="form-group">
+						<label for="username">Username</label> <input type="text"
+							th:field="*{username}" class="form-control" id="username"
+							placeholder="username" name="username" />
+					</div>
+					<button type="submit" class="btn btn-default">Inserisci</button>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-offset-1 col-md-10 col-md-offset-1"></div>
+		</div>
+	</section>
+</body>
+</html>

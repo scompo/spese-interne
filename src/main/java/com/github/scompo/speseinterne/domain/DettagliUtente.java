@@ -1,17 +1,20 @@
 package com.github.scompo.speseinterne.domain;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class DettagliUtente {
 
 	private Utente utente;
 	
 	private BigDecimal totale;
-
-	public DettagliUtente(Utente utente, BigDecimal totale) {
-		
+	
+	private LocalDate ultimaModifica;
+	
+	public DettagliUtente(Utente utente, BigDecimal totale, LocalDate ultimaModifica) {
 		this.utente = utente;
 		this.totale = totale;
+		this.ultimaModifica = ultimaModifica;
 	}
 
 	public Utente getUtente() {
@@ -30,10 +33,18 @@ public class DettagliUtente {
 		this.totale = totale;
 	}
 
+	public LocalDate getUltimaModifica() {
+		return ultimaModifica;
+	}
+
+	public void setUltimaModifica(LocalDate ultimaModifica) {
+		this.ultimaModifica = ultimaModifica;
+	}
+
 	@Override
 	public String toString() {
-		return "DettagliUtente [utente=" + utente + ", totale=" + totale + "]";
+		return "DettagliUtente [utente=" + utente + ", totale=" + totale + ", ultimaModifica=" + ultimaModifica + "]";
 	}
-	
+
 	
 }

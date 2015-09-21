@@ -15,10 +15,14 @@
 <!-- Optional theme -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
-
+	<link rel="stylesheet"
+	href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/build/css/bootstrap-datetimepicker.css" />
 <!-- Latest compiled and minified JavaScript -->
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
+<script
+	src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/src/js/bootstrap-datetimepicker.js"></script>
 </head>
 <body>
 	<header>
@@ -27,6 +31,9 @@
 				Spese Interne <small>Gestione delle spese</small>
 			</h1>
 		</div>
+		<section layout:fragment="navbar">
+			<p>navbar</p>
+		</section>
 	</header>
 	<div>
 		<section layout:fragment="content">
