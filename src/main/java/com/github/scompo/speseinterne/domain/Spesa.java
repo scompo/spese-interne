@@ -9,6 +9,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 @Entity
 public class Spesa implements DomainObject {
 
@@ -22,9 +25,11 @@ public class Spesa implements DomainObject {
 	private Utente utente;
 
 	@Column
+	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dataSpesa;
 
 	@Column
+	@DateTimeFormat(iso = ISO.DATE)
 	private LocalDate dataInserimento;
 
 	@Column
