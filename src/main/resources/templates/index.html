@@ -10,35 +10,32 @@
 		<h1>Spese interne</h1>
 	</header>
 	<section layout:fragment="navbar">
-		<ul class="nav nav-tabs">
+		<ul class="nav nav-pills">
 			<li role="presentation" class="active"><a href="/">Index</a></li>
 			<li role="presentation"><a href="/utenti">Inserisci utente</a></li>
 		</ul>
 	</section>
 	<section layout:fragment="content">
-		<div class="row">
-			<div class="col-md-offset-1 col-md-10 col-md-offset-1">
-				<table class="table">
-					<thead>
-						<tr>
-							<th>Utente</th>
-							<th>Totale (&euro;)</th>
-							<th>Ultima spesa</th>
-						</tr>
-					</thead>
-					<tbody>
-						<tr th:each="dettaglioUtente : ${dettagliUtenti}">
-							<td><a href="/spese"
-								th:href="@{'/utenti/' + ${dettaglioUtente.utente.username} +'/spese'}"
-								th:text="${dettaglioUtente.utente.username}">username</a></td>
-							<td th:text="${dettaglioUtente.totale}">00.00</td>
-							<td th:text="${dettaglioUtente.ultimaModifica}">1234/12/12</td>
-						</tr>
-					</tbody>
+		
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Utente</th>
+					<th>Totale (&euro;)</th>
+					<th>Ultima spesa</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="dettaglioUtente : ${dettagliUtenti}">
+					<td><a href="/spese"
+						th:href="@{'/utenti/' + ${dettaglioUtente.utente.username} +'/spese'}"
+						th:text="${dettaglioUtente.utente.username}">username</a></td>
+					<td th:text="${dettaglioUtente.totale}">00.00</td>
+					<td th:text="${dettaglioUtente.ultimaModifica}">YYYY/MM/DD</td>
+				</tr>
+			</tbody>
 
-				</table>
-			</div>
-		</div>
+		</table>
 	</section>
 </body>
 </html>
