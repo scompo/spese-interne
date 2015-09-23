@@ -6,23 +6,27 @@
 <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">Spese
 	Interne</title>
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script th:src="@{/jquery/1.11.3/jquery.min.js}" src="jquery.min.js"></script>
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" />
+	th:href="@{/bootstrap/3.3.5/css/bootstrap.min.css}"
+	href="bootstrap.min.css" />
 
 <!-- Optional theme -->
 <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" />
-	<link rel="stylesheet"
-	href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/build/css/bootstrap-datetimepicker.css" />
+	th:href="@{/bootstrap/3.3.5/css/bootstrap-theme.min.css}"
+	href="bootstrap-theme.min.css" />
+<link rel="stylesheet"
+	th:href="@{/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css}"
+	href="bootstrap-datetimepicker.min.css" />
 <!-- Latest compiled and minified JavaScript -->
+<script th:src="@{/bootstrap/3.3.5/js/bootstrap.min.js}"
+	src="bootstrap.min.js"></script>
+<script th:src="@{/moment/moment-with-locales.min.js}"
+	src="moment-with-locales.min.js"></script>
 <script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-<script src="http://momentjs.com/downloads/moment-with-locales.min.js"></script>
-<script
-	src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/src/js/bootstrap-datetimepicker.js"></script>
+	th:src="@{/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js}"
+	src="bootstrap-datetimepicker.min.js"></script>
 </head>
 <body>
 	<header>

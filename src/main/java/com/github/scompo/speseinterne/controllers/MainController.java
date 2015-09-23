@@ -19,6 +19,7 @@ import com.github.scompo.speseinterne.repositories.UtenteRepository;
 import com.github.scompo.speseinterne.services.RiassuntoDettagliUtenteService;
 
 @Controller
+@RequestMapping("/")
 public class MainController {
 
 	@Autowired
@@ -30,7 +31,7 @@ public class MainController {
 	@Autowired
 	private SpesaRepository spesaRepository;
 
-	@RequestMapping("/")
+	@RequestMapping
 	public String index(Model model) {
 
 		Collection<DettagliUtente> allRiassuntoDettagli = utenteDetailsService.getAllRiassuntoDettagli();
@@ -38,14 +39,14 @@ public class MainController {
 		return "index";
 	}
 
-	@RequestMapping(value = "/utenti", method = RequestMethod.GET)
+	@RequestMapping(value = "utenti", method = RequestMethod.GET)
 	public String utenti(Model model) {
 
 		model.addAttribute("utente", new Utente());
 		return "inserimento-utenti";
 	}
 
-	@RequestMapping(value = "/utenti/{username}/spese", method = RequestMethod.GET)
+	@RequestMapping(value = "utenti/{username}/spese", method = RequestMethod.GET)
 	public String spese(Model model, @PathVariable(value = "username") String username) {
 
 		Utente utente = utenteRepository.findOne(username);
@@ -55,7 +56,7 @@ public class MainController {
 		return "inserimento-spese";
 	}
 
-	@RequestMapping(value = "/salvaUtente", method = RequestMethod.POST)
+	@RequestMapping(value = "salvaUtente", method = RequestMethod.POST)
 	public String saveUser(Utente utente) {
 
 		System.err.println(utente);
@@ -70,7 +71,7 @@ public class MainController {
 		return "redirect:/";
 	}
 
-	@RequestMapping(value = "/utenti/{username}/salvaSpesa", method = RequestMethod.POST)
+	@RequestMapping(value = "utenti/{username}/salvaSpesa", method = RequestMethod.POST)
 	public String saveSpesa(Spesa spesa, BindingResult bindingResult, @PathVariable(value = "username") String username) {
 
 		System.err.println(bindingResult.getAllErrors());
