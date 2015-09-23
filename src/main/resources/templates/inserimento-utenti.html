@@ -17,9 +17,12 @@
 		</ul>
 	</section>
 	<section layout:fragment="content">
-		<div class="row">
-			<div class="col-md-12">
-				<form class="form-inline" action="#" th:action="@{/salvaUtente}"
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<h3 class="panel-title">Dettagli utente</h3>
+			</div>
+			<div class="panel-body">
+				<form class="form" action="#" th:action="@{/salvaUtente}"
 					th:object="${utente}" method="post">
 					<div class="form-group">
 						<label for="username">Username</label> <input type="text"
