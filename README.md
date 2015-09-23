@@ -4,7 +4,7 @@ Applicazione per la gestione delle spese interne.
 
 ## Status
 
-Stato tests su [travis-ci](CI https://travis-ci.org).
+Stato tests su [travis-ci](https://travis-ci.org).
 
 ### master
 
