@@ -2,7 +2,9 @@
 
 Applicazione per la gestione delle spese interne.
 
-## Status
+Disponibile su [heroku](http://heroku.com) a [questo indirizzo](https://spese-interne.herokuapp.com/)
+
+## Stato build
 
 Stato tests su [travis-ci](https://travis-ci.org).
 
